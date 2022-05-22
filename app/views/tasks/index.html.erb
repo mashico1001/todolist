@@ -1,0 +1,65 @@
+<div class="task-container">
+  <h1>Todo</h1>
+
+  <div class="task-form">
+    <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= f.label :title, "Title" %></td>
+          <td><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :body, "Body" %></td>
+          <td><%= f.text_area :body %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :deadline_at, "〆切" %></td>
+          <td><%= f.datetime_field :deadline_at %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= f.submit "Create!", class: "btn-task-create" %></td>
+        </tr>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+  
+  <div class="task-index">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th colspan="2">Body</th>
+          <th>〆切</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+        <tr>
+          <td>
+            <%= link_to task_path(task) do %>
+            <%= task.title %>
+            <% end %>
+          </td>
+          <td colspan="2">
+            <%= task.body %>
+          </td>
+          <td>
+            <%= task.deadline_at.strftime("%Y/%m/%d %H:%M") %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
+    </table>
+  </div>
+
+
+</div>
