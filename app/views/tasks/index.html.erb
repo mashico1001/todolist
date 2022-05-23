@@ -36,14 +36,18 @@
     <table class="task-index-table">
       <thead>
         <tr>
+          <th></th>
           <th>Title</th>
           <th id="td-body" colspan="2">Body</th>
           <th>〆切</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @tasks.each do |task| %>
         <tr>
+          <td><%= link_to "Done", done_task_path(task), method: :post, class: 'btn-task-done' %></td>
           <td>
             <%= link_to task_path(task) do %>
             <%= task.title %>
@@ -57,9 +61,89 @@
           <td>
             <%= task.deadline_at.strftime("%Y/%m/%d %H:%M") %>
           </td>
+          <td><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
+          <td><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
         </tr>
+        <% end %>
       </tbody>
-    <% end %>
+    </table>
+  </div>
+
+
+  <div class="task-index">
+    <h4>期限切れ</h4>
+    <table class="expired-task-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th id="td-body" colspan="2">Body</th>
+          <th>〆切</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks_expired.each do |task| %>
+        <tr>
+          <td><%= link_to "Done", done_task_path(task), method: :post, class: 'btn-task-done' %></td>
+          <td>
+            <%= link_to task_path(task) do %>
+            <%= task.title %>
+            <% end %>
+          </td>
+          <td colspan="2">
+            <div class="table-body">
+              <%= task.body %>
+            </div>
+          </td>
+          <td>
+            <%= task.deadline_at.strftime("%Y/%m/%d %H:%M") %>
+          </td>
+          <td><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
+          <td><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="task-index">
+    <h4>Done</h4>
+    <table class="done-task-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th id="td-body" colspan="2">Body</th>
+          <th>完了日</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks_done.each do |task| %>
+        <tr>
+          <td></td>
+          <td>
+            <%= link_to task_path(task) do %>
+            <%= task.title %>
+            <% end %>
+          </td>
+          <td colspan="2">
+            <div class="table-body">
+              <%= task.body %>
+            </div>
+          </td>
+          <td>
+            <%= task.completion_at.strftime("%Y/%m/%d %H:%M") %>
+          </td>
+          <td><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
+          <td><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
+        </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 

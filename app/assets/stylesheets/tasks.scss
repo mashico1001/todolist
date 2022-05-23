@@ -19,7 +19,9 @@ table.task-new-table tr td {
   width: 50px;
 }
 
-table.task-index-table tr td {
+table.task-index-table tr td,
+table.expired-task-table tr td,
+table.done-task-table tr td {
   padding: 0 20px;
 }
 
