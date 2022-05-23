@@ -1,9 +1,9 @@
-<div class="task-container">
+<div class="container">
   <h1>Todo</h1>
 
   <div class="task-form">
     <%= form_with model: @task, url: tasks_path, local: true do |f| %>
-    <table>
+    <table class="task-new-table">
       <thead>
         <tr>
           <th></th>
@@ -31,13 +31,13 @@
     </table>
     <% end %>
   </div>
-  
+
   <div class="task-index">
-    <table>
+    <table class="task-index-table">
       <thead>
         <tr>
           <th>Title</th>
-          <th colspan="2">Body</th>
+          <th id="td-body" colspan="2">Body</th>
           <th>〆切</th>
         </tr>
       </thead>
@@ -50,7 +50,9 @@
             <% end %>
           </td>
           <td colspan="2">
-            <%= task.body %>
+            <div class="table-body">
+              <%= task.body %>
+            </div>
           </td>
           <td>
             <%= task.deadline_at.strftime("%Y/%m/%d %H:%M") %>

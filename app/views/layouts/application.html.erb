@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "Top", root_path %>
+          </li>
+          <li>
+            <%= link_to "Task", tasks_path %>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
