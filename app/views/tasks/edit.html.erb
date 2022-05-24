@@ -1,0 +1,33 @@
+<div class="container">
+  <h4>編集画面</h4>
+  <div class="task-form">
+      <%= form_with model: @task, url: task_path(@task), local: true do |f| %>
+      <table class="task-new-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= f.label :title, "Title" %></td>
+            <td><%= f.text_field :title %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :body, "Body" %></td>
+            <td><%= f.text_area :body %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :deadline_at, "〆切" %></td>
+            <td><%= f.datetime_field :deadline_at %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= f.submit "Update!", class: "btn-task-update" %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+  </div>
+</div>
