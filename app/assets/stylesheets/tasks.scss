@@ -23,6 +23,19 @@ table.task-index-table tr td,
 table.expired-task-table tr td,
 table.done-task-table tr td {
   padding: 0 20px;
+  text-align: center;
+}
+
+table.task-index-table tr td:nth-child(1),
+table.expired-task-table tr td:nth-child(1),
+table.done-task-table tr td:nth-child(1) {
+  width: 50px;
+}
+
+table.task-index-table tr td:nth-child(2),
+table.expired-task-table tr td:nth-child(2),
+table.done-task-table tr td:nth-child(2) {
+  width: 100px;
 }
 
 .btn-task-create,
