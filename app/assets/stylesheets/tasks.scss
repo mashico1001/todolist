@@ -56,3 +56,14 @@ table.done-task-table tr td:nth-child(2) {
   margin-left: 20px;
 }
 
+.btn {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.btn:hover {
+  background-color: gray;
+}
+
