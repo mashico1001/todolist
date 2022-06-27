@@ -67,3 +67,8 @@ table.done-task-table tr td:nth-child(2) {
   background-color: gray;
 }
 
+.btn-task-done,
+.btn-task-edit,
+.btn-task-destroy {
+  text-decoration: none;
+}
