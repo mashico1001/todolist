@@ -71,4 +71,11 @@ table.done-task-table tr td:nth-child(2) {
 .btn-task-edit,
 .btn-task-destroy {
   text-decoration: none;
+  color: black;
+}
+
+.btn-task-done:hover,
+.btn-task-edit:hover,
+.btn-task-destroy:hover {
+  font-weight: bold;
 }
