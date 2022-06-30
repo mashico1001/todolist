@@ -62,8 +62,8 @@
           <td>
             <%= task.deadline_at.strftime("%Y/%m/%d %H:%M") %>
           </td>
-          <td><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
-          <td><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
+          <td class="table-btn"><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
+          <td class="table-btn"><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
         </tr>
         <% end %>
       </tbody>
@@ -101,8 +101,8 @@
           <td>
             <%= task.deadline_at.strftime("%Y/%m/%d %H:%M") %>
           </td>
-          <td><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
-          <td><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
+          <td class="table-btn"><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
+          <td class="table-btn"><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
         </tr>
         <% end %>
       </tbody>
@@ -140,8 +140,8 @@
           <td>
             <%= task.completion_at.strftime("%Y/%m/%d %H:%M") %>
           </td>
-          <td><%= link_to "Edit", edit_task_path(task), class: 'btn-task-edit' %></td>
-          <td><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
+          <td class="table-btn"></td>
+          <td class="table-btn"><%= link_to "Delete", task_path(task), method: :delete, class: 'btn-task-destroy' %></td>
         </tr>
         <% end %>
       </tbody>
